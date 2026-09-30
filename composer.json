@@ -1,0 +1,52 @@
+{
+    "name": "doxa-soft/laravel-seeme",
+    "description": "Laravel package for the SeeMe SMS Gateway",
+    "keywords": ["laravel", "sms", "seeme", "gateway", "notification"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mánuel Fodor",
+            "email": "mfodor@doxasoft.hu",
+            "homepage": "https://doxasoft.hu",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0",
+        "illuminate/http": "^11.0",
+        "illuminate/notifications": "^11.0",
+        "illuminate/routing": "^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "phpunit/phpunit": "^10.5|^11.0",
+        "mockery/mockery": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "DoxaSoft\\LaravelSeeMe\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DoxaSoft\\LaravelSeeMe\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DoxaSoft\\LaravelSeeMe\\SeeMeServiceProvider"
+            ],
+            "aliases": {
+                "SeeMe": "DoxaSoft\\LaravelSeeMe\\SeeMeFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
