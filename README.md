@@ -15,22 +15,6 @@ Laravel package for the [SeeMe SMS Gateway](https://seeme.hu). Provides a servic
 composer require doxa-soft/laravel-seeme
 ```
 
-### Local (monorepo path repository)
-
-Add to your root `composer.json`:
-
-```json
-"repositories": [
-    { "type": "path", "url": "packages/laravel-seeme" }
-]
-```
-
-Then require it:
-
-```bash
-composer require doxa-soft/laravel-seeme:@dev
-```
-
 The service provider and `SeeMe` facade alias are registered automatically via package discovery.
 
 ## Configuration
