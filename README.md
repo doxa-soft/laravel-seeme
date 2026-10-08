@@ -36,6 +36,7 @@ SEEME_SENDER=YourBrand
 
 | Variable | Default | Description |
 |---|---|---|
+| `SEEME_DRIVER` | `api` | `api` to send real SMS, `log` to write to Laravel log instead |
 | `SEEME_API_KEY` | — | API key from SeeMe Gateway Settings |
 | `SEEME_SENDER` | `""` | Default sender ID shown on recipient's phone |
 | `SEEME_BASE_URL` | `https://seeme.hu/gateway` | Gateway URL |
@@ -305,6 +306,16 @@ try {
 | 16 | Message length depends on character encoding |
 | 17 | Callback URL unreachable |
 | 18 | Invalid API key |
+
+## Local Development
+
+To avoid sending real SMS messages during local development, set the driver to `log` in your `.env`:
+
+```env
+SEEME_DRIVER=log
+```
+
+SMS content will be written to your Laravel log at the `DEBUG` level instead of being delivered.
 
 ## Testing
 

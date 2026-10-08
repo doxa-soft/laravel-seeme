@@ -14,6 +14,10 @@ class SeeMeServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/seeme.php', 'seeme');
 
         $this->app->singleton(SeeMeServiceInterface::class, function ($app) {
+            if ($app['config']->get('seeme.driver', 'api') === 'log') {
+                return new LogSeeMeService();
+            }
+
             return new SeeMeService(
                 http: $app->make(HttpFactory::class),
                 apiKey: $app['config']->get('seeme.api_key', ''),

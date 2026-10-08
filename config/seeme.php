@@ -4,6 +4,15 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Driver
+    |--------------------------------------------------------------------------
+    | 'api' — sends real SMS via the SeeMe HTTP API (default)
+    | 'log' — writes to the Laravel log, no HTTP call (local/staging)
+    */
+    'driver' => env('SEEME_DRIVER', 'api'),
+
+    /*
+    |--------------------------------------------------------------------------
     | API Key
     |--------------------------------------------------------------------------
     | Your SeeMe SMS Gateway API key. Generate it under Gateway Settings
